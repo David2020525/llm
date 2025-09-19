@@ -3,6 +3,7 @@
  */
 
 const { CompleteCryptoClassifier } = require('../complete_classifier.js');
+const { setCorsHeaders, handleCors } = require('./cors.js');
 
 // Initialize classifier (this will be cached across requests)
 let classifier = null;
@@ -23,9 +24,13 @@ async function initClassifier() {
 }
 
 module.exports = async (req, res) => {
+    // Handle CORS
+    if (handleCors(req, res)) return;
+    
     // Initialize classifier if not already done
     await initClassifier();
     
+    setCorsHeaders(res);
     res.json({
         status: 'healthy',
         model_loaded: isLoaded,

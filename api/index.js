@@ -3,15 +3,22 @@
  * Main endpoint that provides API documentation and overview
  */
 
+const { setCorsHeaders, handleCors } = require('./cors.js');
+
 module.exports = async (req, res) => {
+    // Handle CORS
+    if (handleCors(req, res)) return;
+    
     // Only allow GET requests
     if (req.method !== 'GET') {
+        setCorsHeaders(res);
         return res.status(405).json({
             error: 'Method not allowed',
             allowed_methods: ['GET']
         });
     }
 
+    setCorsHeaders(res);
     res.json({
         name: 'Crypto Classification API',
         version: '1.0.0',
