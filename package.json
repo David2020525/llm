@@ -1,0 +1,21 @@
+{
+  "name": "crypto-classifier-tfjs",
+  "version": "1.0.0",
+  "description": "Crypto classification using TensorFlow.js",
+  "main": "simple_classifier.js",
+  "scripts": {
+    "start": "node simple_classifier.js",
+    "test": "node simple_classifier.js"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs-node": "^4.15.0"
+  },
+  "keywords": [
+    "crypto",
+    "classification",
+    "tensorflow",
+    "machine-learning"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}

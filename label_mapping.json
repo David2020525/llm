@@ -1,0 +1,32 @@
+{
+  "id2label": {
+    "0": "price",
+    "1": "trending",
+    "2": "cryptonews",
+    "3": "yields_pools",
+    "4": "best_yields",
+    "5": "trends_pools",
+    "6": "trends_pools_new",
+    "7": "top_gainers",
+    "8": "top_losers",
+    "9": "analysis",
+    "10": "sentiment",
+    "11": "ai_analysis",
+    "12": "general"
+  },
+  "label2id": {
+    "ai_analysis": 11,
+    "analysis": 9,
+    "best_yields": 4,
+    "cryptonews": 2,
+    "general": 12,
+    "price": 0,
+    "sentiment": 10,
+    "top_gainers": 7,
+    "top_losers": 8,
+    "trending": 1,
+    "trends_pools": 5,
+    "trends_pools_new": 6,
+    "yields_pools": 3
+  }
+}
