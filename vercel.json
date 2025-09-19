@@ -6,6 +6,21 @@
   "functions": {
     "api/index.js": {
       "maxDuration": 30
+    },
+    "api/health.js": {
+      "maxDuration": 30
+    },
+    "api/classify.js": {
+      "maxDuration": 30
+    },
+    "api/batch_classify.js": {
+      "maxDuration": 30
+    },
+    "api/model_info.js": {
+      "maxDuration": 30
+    },
+    "api/categories.js": {
+      "maxDuration": 30
     }
   }
 }
