@@ -3,6 +3,7 @@
  */
 
 const { CompleteCryptoClassifier } = require('../complete_classifier.js');
+const { setCorsHeaders, handleCors } = require('./cors.js');
 
 // Initialize classifier (this will be cached across requests)
 let classifier = null;
@@ -23,8 +24,12 @@ async function initClassifier() {
 }
 
 module.exports = async (req, res) => {
+    // Handle CORS
+    if (handleCors(req, res)) return;
+    
     // Only allow GET requests
     if (req.method !== 'GET') {
+        setCorsHeaders(res);
         return res.status(405).json({
             error: 'Method not allowed',
             allowed_methods: ['GET']
@@ -36,11 +41,13 @@ module.exports = async (req, res) => {
         await initClassifier();
         
         const modelInfo = classifier.getModelInfo();
+        setCorsHeaders(res);
         res.json({
             ...modelInfo,
             timestamp: new Date().toISOString()
         });
     } catch (error) {
+        setCorsHeaders(res);
         res.status(500).json({
             error: 'Failed to get model info',
             message: error.message
