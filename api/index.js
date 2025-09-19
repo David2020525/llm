@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
         name: 'Crypto Classification API',
         version: '1.0.0',
         description: 'Classify crypto-related queries into predefined categories',
-        base_url: 'https://llm-ri1e.vercel.app',
+        base_url: 'https://llm.vercel.app',
         endpoints: {
             'GET /api/health': 'Health check',
             'POST /api/classify': 'Classify a single query',
